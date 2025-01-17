@@ -406,4 +406,112 @@ function isEven(element) {
     return element % 2 === 0;// here checks and gives true or false
 }
 //------------------------------------------------
-//.reduce()
+// Static
+//keyword that defines properties or methods to a class itself rather than
+// objects created from that class
+// class own anything in static
+
+class MathUtil {
+   static PI = 3.14
+}
+console.log(MathUtil.PI);
+
+ class User {
+     static userCount = 0;
+
+     constructor(username) {
+        this.username = username;
+        User.userCount++;
+     }
+ }
+
+ const user1 = new User("spongebob");// object
+ const user2 = new User("Patrick")
+ console.log(user1.username);
+ console.log(User.userCount);
+ //----------------------------------------------------------------
+ // Inheritance: allows a new class to inherit properties or methods from an 
+ // existing class(parent -> child) helps with code reusability
+// This is parent
+class Animal {
+    alive = true;
+
+    eat() {
+        console.log(`${this.name}`);
+    }
+    sleep() {
+        console.log(`${this.name}`);
+    }
+}
+//This is child
+class Rabbit extends Animal {// use extends keyword get properties /methods from parent class
+    name="Rabbit";
+}
+class Fish extends Animal {
+    name="starFish";
+}
+
+const rabbit = new Rabbit();// creating an object
+const fish = new Fish();
+
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
+//------------------------------------------------
+// super: It is a keyword used  in classes to call the constructor or access the
+// properties and methods of a parent
+// this= this object
+// super = the parent
+//-------------------------------------------------------------\
+//gettres & Setters
+
+// getter = special method that makes a property readable
+// setter = special method that makes a property writeable
+
+// validate and modify a value when reading/writing a property
+
+
+class Rectangle {
+    constructor(width,height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    set width(newWidth) {
+        if(newWidth > 0) {
+            this._width = newWidth;
+        } 
+        else {
+            console.error("width")
+        }
+    }
+    get width() {
+        return this._width;
+    }
+}
+
+const rectangle = new Rectangle(3,4);
+
+console.log(rectangle.width,rectangle.height);
+//--------------------------------------------
+// destructing = extract values from array and objects then assign them to/
+// variables in convinent way
+// []: array destructing
+//{}: object destructing
+
+
+// swap the values of 2 variables
+let a = 1;
+let b = 2;
+
+[a,b] = [b,a];
+console.log(a);
+console.log(b);
+
+const colors =["red", "green", "blue"];
+[colors[0], colors[2]] = [colors[2],colors[0]]// swapping
+
+console.log(colors);
+
+
+
