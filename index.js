@@ -540,3 +540,112 @@ const person = {
 console.log(person.fullName);
 // Array of objects
 
+//.reduce()
+
+const prices = [5,30,10,25,15,20];
+
+const total1 = prices.reduce(sum);
+console.log(total1);
+
+function sum(previous,next) {
+ return previous + next;
+}
+//------------------------------------------------
+// function declaration,
+//  function hello(){
+//     console.log("hello");
+// }
+//  function expression
+
+// const hello = function(){
+//     console.log("hello");
+// }
+//hello();
+
+//setTimeout(hello, 3000);// after 3 sec hello will written
+
+setTimeout(function(){
+    console.log("hello");
+},3000);
+//------------------------------------------------------
+// Arrow functions:
+const hell = (name) =>{
+    console.log(`${name}`);
+
+}
+hell('bro');
+
+// setTimeout(hey, 3000);
+
+// function hey() {
+//     console.log('hey');
+// }
+
+//another way
+
+setTimeout(function(){
+    console.log("hello");
+},3000
+)
+// another example
+const nums = [1,2,34];
+
+const squares1 = nums.map((element => Math.pow(element,2)));
+// used arrow function to need to have return if only one line
+console.log(squares1);
+//---------------------------------------
+// objects: a collection of related properties
+
+
+const person1 = {
+    name: "bob",
+    lastname: "man",
+    age: 30,
+    isEmployed: true,
+    sayHello: function(){console.log("Hi")}
+}
+// const person2 = { // couldn't have the same object names take it differently
+//  name: "bob"
+// }
+//console.log(person.name);
+console.log(person1.sayHello()
+)
+//--------------------------------------------------
+//this keyword: reference to the object
+
+const per = {
+    name:"chinni",
+    sayHello: function(){console.log(`${this.name}`)}// use this keywordto access that property
+}
+
+per.sayHello();
+//---------------------------------------------------------
+// Constructor
+
+function car(make,model,year) {
+this.make= make,
+this.model=model,
+this.year = year
+this.drive = function(){console.log(`${this.model}`)}
+}
+
+const car1 = new car("some","ford", "2024");// creating the instance using new 
+// and here car is the constructor
+console.log(car1.make);
+car1.drive();
+//----------------------------------------------------
+
+//Class: ES6 Feature provides a more structured way to work with objects
+class product{
+    constructor(name,price){
+        this.name= name;
+        this.price = price;
+    }
+    displayProduct(){
+        console.log(`${this.name}`);
+    }
+}
+const product1 = new product("shirt", 20);
+product1.displayProduct();
+//------------------------------------------------------
+
