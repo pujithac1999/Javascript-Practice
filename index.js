@@ -500,7 +500,7 @@ console.log(rectangle.width,rectangle.height);
 //{}: object destructing
 
 
-// swap the values of 2 variables
+// swap the values of 2 variables array
 let a = 1;
 let b = 2;
 
@@ -513,5 +513,30 @@ const colors =["red", "green", "blue"];
 
 console.log(colors);
 
+// extract values from objects
 
+const person2 = {
+    firstName:"bjhn",
+    age:30,
+}
+const person3 = {
+    firstName:"bjhnss",
+    age:90,
+}
+
+//const {firstName, age} = person2;
+//------------------------------------------
+// nested objects: objects inside of other objects
+
+const person = {
+    fullName: "spongebob",
+    age:30,
+    hobbies:["karate","jellyfish","cooking"],
+    address: {
+        street:"124 const st",
+    }
+}
+
+console.log(person.fullName);
+// Array of objects
 
