@@ -738,3 +738,28 @@ const jsonString = JSON.stringify(names);
 console.log(jsonString);
 //---------------------------------------------
 // Fetch Data from API
+
+// fetch = Function used for making HTTP requests to fetch resources
+// simplifies asynchronous data fetching in javascript and used for interacting with 4
+// API's to retrive and send data asynchronously over the web.
+// fetch(url, {options}) // options: GET,PUT, DELETE,POST
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+.then(response => response.json())
+.then(data => console.log(data.id))
+.catch(error => console.error(error));
+
+async function fetchData() {
+try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/typhlosion")
+    if(!response.ok) {
+        throw new Error("could not fetch resource");
+    }
+
+    const data = await response.json();
+    console.log(data);
+}
+catch(error) {
+    console.log(error);
+}
+    
+}
