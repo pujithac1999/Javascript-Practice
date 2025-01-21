@@ -1,0 +1,9 @@
+// object inside array
+{
+    "name":"Spongebob",
+    "age" : 30,
+    "isEmp": true,
+    "hobbies": ["jellyfishing","karate"]
+}
+
+

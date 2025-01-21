@@ -648,4 +648,93 @@ class product{
 const product1 = new product("shirt", 20);
 product1.displayProduct();
 //------------------------------------------------------
+// Promise 
+// An object that manages asynchronous operations.
+// pending-> resolved -> rejected
+// syntax:  new Promise((resolve,reject) => {asynchronous code})
 
+// Async & Await
+//Async = makes a function return a promise
+//Await = makes a async function wait for a promise
+// Allows you to write a asynchronous code in a synchronous manner
+// Async doesn't have resolve or reject paramters
+// Everything after await is placed in a event queue
+function walkDog(){
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            const dogWalked = true;
+            if(dogWalked) {
+                resolve("you walk the dog");
+            }
+            else{
+                reject("you didn't ")
+            }
+          
+       },1500);
+    })
+}
+
+function cleanKitchen() {
+    return new Promise((resolve,reject) => {
+        setTimeout(()=> {
+            const kitchenCleaned = true;
+            if(kitchenCleaned) {
+                resolve("you clean the kitchen");
+            }
+            else {
+                reject("you can't clean");
+            }
+        },2500);
+    })
+}
+
+function takeOutTrash () {
+    return new Promise((resolve,reject) => {
+        setTimeout(() => {
+            const takenTrash = true;
+            if(takenTrash) {
+            resolve("you take out the trash");
+            } else {
+                reject("you didn't taken trash")
+            }
+        },500);
+    })
+}
+
+async function doChores() {
+    try {
+    const walkDogResult = await walkDog();// await is only valid when there is async
+    console.log(walkDogResult);
+
+    const cleanKitchenResult = await cleanKitchen();
+    console.log(cleanKitchenResult);
+
+    const takeOutTrash1 = await takeOutTrash();
+    console.log(takeOutTrash1);
+    }
+    catch(error){
+        console.log(error);
+    }
+
+}
+doChores();
+// // here using method chaining
+// no need of this when you use async/await
+// walkDog().then(value => {console.log(value); return cleanKitchen()})
+// .then(value => {console.log(value); return takeOutTrash()})
+// .then(value => {console.log(value)})
+// .catch(error => console.error(error));
+//------------------------------------------
+//Json Files
+// (Javascript object notation) data - interchange format use for exchanging data between
+// a server and a web application
+//JSON files{key:value} OR [value1, value2,value3]
+// JSON.stringify() = converts a JS object to a JSON String
+// JSON.parse() = coverts a JSON string to Object
+
+const names = ["sponge", "patrick", "squid", "sandy"];
+
+const jsonString = JSON.stringify(names);
+console.log(jsonString);
+//---------------------------------------------
+// Fetch Data from API
