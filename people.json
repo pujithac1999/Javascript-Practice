@@ -1,0 +1,11 @@
+// Array of Objects
+[{
+    "name": "sponge",
+    "age": 20,
+    "isEmployed": true
+},
+{
+    "name":"peter",
+    "age": 30,
+    "isEmployed":false
+}]
