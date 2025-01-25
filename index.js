@@ -649,3 +649,108 @@ const product1 = new product("shirt", 20);
 product1.displayProduct();
 //------------------------------------------------------
 
+// sort
+//let fruits4 = ["apple", "orange", "banana","pineapple","carrot"];
+let fruits5 = [1,78,9,23]// sorting lexical graphically
+//fruits5.sort();
+fruits5.sort((a,b) => a-b);// now sorts asc order
+console.log(fruits5);
+//------------------------------------
+// shuffle elements of an array
+const cards = ['A', 2,3,4,5,6,7,'j','k'];
+
+function shuffle(array) {
+  for(let i=array.length -1; i>0;i--) {
+    const random = Math.floor(Math.random() *(i+1));
+
+    [array[i],array[random] = array[random],array[i]];
+  }
+}
+shuffle(cards);
+console.log(cards);
+//---------------------------------------------
+//Date Objects: objects that containes values that represents
+// date and times
+
+const date = new Date(2024,0,1,2,3,4);
+const year = date.getFullYear();
+console.log(year);
+//console.log(date);
+//-------------------------------------------------
+// Closure: It is function defined inside another function
+function outer() {
+    let message= "hello1";
+    function inner() {
+console.log(message);
+    }
+    inner();
+}
+message = "good bye"// in different scope so don't work
+outer();
+function counter(){
+
+    let count = 0;
+function inc() {
+
+    count++;
+    console.log(`${count}`);
+}
+return {inc};
+}
+const counter1 = counter();
+counter1.inc();
+//-----------------------------
+//setTimeout: setTimeout(callback,delay)
+// function sayHello() {
+//     window.alert("Hello");
+// }
+//setTimeout(function(){window.alert("Hello")}, 3000);
+//-------------------------------------
+//synchronous and asynchronous
+//console.log("Task1");
+
+
+setTimeout(() => console.log("Task1"),3000);
+console.log("Task2");
+//--------------------------------------
+// Error Handling
+
+//console.lok("hello");// type error
+// console.log(x); // reference error as it is not defined
+try {
+    console.log("hello");
+}
+catch(error) {
+    console.log(error);
+}
+finally {
+    // close files
+    //close connections
+    //release resources
+    console.log("always executes")
+}
+console.log("reached")
+//----------------------------
+// DOM
+console.log(document);
+//----------------------------
+// element selector
+
+const myHeading = document.getElementById("my-heading");
+
+myHeading.style.backgroundColor = "yellow";
+myHeading.style.textAlign ="center";
+
+console.log(myHeading);
+//----------------------
+// Add And Change HTML
+// 1. Create the element
+ const new1 = document.createElement("h1");
+ // 2. Add Attributes/properties
+ new1.textContent = "I like Pizza";
+//3. append element to dom
+document.body.append(new1);
+//  4. remove html element
+document.body.removeChild(new1);
+// ---------------------------
+// Call Back Hell
